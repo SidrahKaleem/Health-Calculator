@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Untitled </title>
+<style>
+h1 {
+  height: 20px;
+  width: 92%;
+    font-size: 30pt; 
+ padding: 10px 50px 40px 50px;
+}
+</style>
+<script type="text/javascript">
+let w1 = /^[0-9.]{1,20}$/;
+let a1 =/^[0-9.]{1,20}$/;
+let t1 = /^[0-9.]{1,20}$/;
+let  h1=  /^[0-9.]{1,20}$/;
+function calculateCaloriesBurned() {
+  let bw = document.getElementById('bodyWeight').value;
+  let ag = document.getElementById('age').value;
+  let t = document.getElementById('time').value;
+  let hr = document.getElementById('heart').value;
+  let flag=true;
+  
+  if (!w1.test(bw)) {
+ bodyWeight.select();
+w.innerHTML="Enter correct";
+w.style.color="red";
+w.style.fontSize="0.85em";
+flag=false;
+ }
+ else
+ {
+ w.innerHTML="";
+ }
+  if (!a1.test(ag)) {
+  age.select();
+a.innerHTML="Enter correct";
+a.style.color="red";
+a.style.fontSize="0.85em";
+flag=false;
+ }
+ else
+ {
+ a.innerHTML="";
+ }
+ if (!t1.test(t)) {
+  time.select();
+t.innerHTML="Enter correct";
+t.style.color="red";
+t.style.fontSize="0.85em";
+flag=false;
+ }
+ else
+ {
+ t.innerHTML="";
+ }
+ if (!h1.test(hr)) {
+  heart.select();
+h.innerHTML="Enter correct";
+h.style.color="red";
+h.style.fontSize="0.85em";
+flag=false;
+ }
+ else
+ {
+ h.innerHTML="";
+ }
+	if(flag==true){
+  let CaloriesBurned = [(ag * 0.2017) + (bw * 0.09036) + (hr * 0.6309) - 55.0969] * t / 4.184;
+  document.getElementById('caloriesBurned').value = CaloriesBurned;}
+  return true;
+}
+</script>
+
+</head>
+<body  background="int2.jpeg" >
+<h1 align="center" style="background-color:#F1C40F; color:white" > Calories Burned Running Calculator</h1>
+<table style="background-color:#1B2631;" width="50%" align="center" >
+<tr><td style="color:white;">Body weight in pounds</td>
+<td rowspan="11"><img src="run.jpg" width="60%" height="400" align="right" ></td></tr>
+<tr><td>
+<input type="text" id="bodyWeight" value=""> <span id="w"></span></td>
+<tr><td style="color:white;">Age</td></tr>
+<tr><td>
+<input type="text" id="age" value=""><span id="a"></span> </td></tr>
+<tr><td style="color:white;">Time in minutes</td></tr>
+<tr><td>
+<input type="text" id="time" value=""><span id="t"></span></td></tr>
+<tr><td style="color:white;">HR in beats per minute.</td></tr>
+<tr><td>
+<input type="text" id="heart" value=""><span id="h"></span></td></tr>
+<tr><td>
+<button onclick="calculateCaloriesBurned()" style="background-color:#F1C40F;" style="color:white;">Calculate</button></td></tr>
+<tr><td style="color:white;">Calories burned per minute</td></tr>
+<tr><td style="color:white;">
+<input type="text" id="caloriesBurned" value="" readonly> </td></tr>
+</table>
+</body>
+</html>

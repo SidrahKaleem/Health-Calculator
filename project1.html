@@ -1,0 +1,152 @@
+<!Doctype html>
+<html>
+<head>
+<title>HEALTH CALCULATOR</title>
+<style>
+h1 {
+  height: 20px;
+  width: 92%;
+    font-size: 30pt; 
+ padding: 10px 50px 40px 50px;
+}
+</style>
+<script>
+function validate()
+{
+let flag=true;
+let check=/^[0-9]{1,3}$/;
+let weight=w.value;
+let waist=wa.value;
+let wrist=wr.value;
+let hip=h.value;
+let forearm=f.value;
+let gender;
+if((!check.test(weight)) || (w.value.length==0))
+{
+w.select();
+a.innerHTML=" Invalid";
+a.style.color="red" ;
+a.style.fontSize="0.85";
+flag=false;
+return false;
+}
+else
+{
+a.innerHTML="";
+}
+if((!check.test(waist)) || (wa.value.length==0))
+{
+wa.select();
+b.innerHTML=" Invalid";
+b.style.color="red" ;
+b.style.fontSize="0.85";
+flag=false;
+return false;
+}
+else
+{
+b.innerHTML="";
+}
+if((!check.test(wrist)) || (wr.value.length==0))
+{
+wr.select();
+c.innerHTML=" Invalid";
+c.style.color="red" ;
+c.style.fontSize="0.85";
+flag=false;
+return false;
+}
+else
+{
+c.innerHTML="";
+}
+if((!check.test(hip)) || (h.value.length==0))
+{
+h.select();
+d.innerHTML=" Invalid";
+d.style.color="red" ;
+d.style.fontSize="0.85";
+flag=false;
+return false;
+}
+
+else
+{
+d.innerHTML="";
+}
+if((!check.test(forearm)) || (f.value.length==0))
+{
+f.select();
+e.innerHTML=" Invalid";
+e.style.color="red" ;
+e.style.fontSize="0.85";
+flag=false;
+return false;
+}
+else
+{
+e.innerHTML="";
+}
+if(flag==true)
+{
+
+let lbm= Math.floor((8.98 + 0.732 * weight) - (0.157 * waist)-(0.249 * hip) + wrist / ((3.14+0.434)*forearm));
+let percentage= parseInt((weight-lbm * 100) / weight);
+if(percentage<0)
+{
+percentage = percentage*-1;
+}
+	per.innerHTML= "" + percentage + "%";
+}
+return true;
+}
+</script>
+<h1 align="center" style="background-color:#F1C40F; color:white" >Body Fat Calculator</h1>
+</head>
+<body background="int2.jpeg">
+<table style="background-color:#1B2631;" border="0" cellpadding="2" cellspacing="0" width="50%" align="center">
+<tr bgcolor="#F4D03F">
+<td colspan="4">  <font color="white" size="5"> <b> Calculate Your Body Fat Index </b></td>
+</tr>
+<tr> <td> </td>
+<td> </td> 
+</tr>
+<tr >
+<td align="center"><font color="white">Weight</font><font color="red">*</font></td>
+<td ><input type="text" size="2" maxlength="4" id="w" style="height:40px"> <span id="a"></span></td>
+<td> <font color="white">Pound</font> </td>
+</tr>
+<tr>
+<td align="center"><font color="white">Waist Circumference</font><font color="red">*</font></td>
+<td><input type="text" size="2" maxlength="4" id="wa" style="height:40px"> <span id="b"></span></td>
+<td><font color="white">Inches</font></td>
+</tr>
+<tr>
+<td align="center"><font color="white">Wrist Circumference</font><font color="red">*</font></td>
+<td><input type="text" size="2" maxlength="4" id="wr" style="height:40px"> <span id="c"></span></td>
+<td> <font color="white">Inches</font></td>
+</tr>
+<tr>
+<td align="center"><font color="white">Hip Circumference</font><font color="red">*</font></td>
+<td><input type="text" size="2" maxlength="4" id="h" style="height:40px"><span id="d"> </span></td>
+<td>  <font color="white">Inches</font></td>
+</tr>
+<tr>
+<td align="center"><font color="white">Forearm Circumference</font><font color="red">*</font></td>
+<td><input type="text" size="2" maxlength="4" style="height:40px" id="f"> <span id="e"> </span> </td>
+<td>  <font color="white">Inches</font> </td>
+</tr>
+<tr>
+<td style="height:50px" align="center" colspan="3"><input type="submit" value="CALCULATE" onclick="validate()"  style="background-color:#F1C40F;"> </td>
+</tr>
+<tr>
+<tr bgcolor="white" colspan="7"> <td height="35"> <font color="Black" size="4"><b> Your Body Fat Percentage is:  <span id="per"> </span> </td>
+</tr>
+<tr>
+<td colspan="7" style="height:50px"><font color="grey">NOTE: These Calculations Are Based On Averages</font></td>
+</tr>
+<tr>
+<td colspan="7"><img src="t.png" alt="pix" width="100%" height="350"> </td> </tr>
+</table>
+</body>
+</html>

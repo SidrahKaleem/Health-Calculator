@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script language="JavaScript">
+
+function calculateBmi() {
+let weight = document.bmiForm.weight.value
+let height = document.bmiForm.height.value
+
+if(weight > 0 && height > 0){	
+let finalBmi = weight/(height/100*height/100)
+document.bmiForm.bmi.value = finalBmi
+if(finalBmi < 18.5){
+document.bmiForm.meaning.value = "That you are too thin."
+}
+if(finalBmi > 18.5 && finalBmi < 25){
+document.bmiForm.meaning.value = "That you are healthy."
+}
+if (finalBmi >=16 &&finalBmi <18){
+document.bmiForm.meaning.value = "That you have underweight."
+}
+if (finalBmi >=18 &&finalBmi <21) {
+      document.bmiForm.meaning.value  ="You are bit skinny, eat more.";
+       }
+if(finalBmi > 25){
+document.bmiForm.meaning.value = "That you have overweight."
+}
+if (finalBmi >40) {
+    document.bmiForm.meaning.value     ="You are clinically obese";
+       }
+}
+
+else{
+	alert("Please Fill in everything correctly")
+}
+}
+
+</script>
+    </head>
+ <body  background="int2.jpeg" >
+	<h1 align="center" style="background-color:#F1C40F; color:white" > BMI Calculator</h1>
+      <form name="bmiForm"  >
+		<table style="background-color:#1B2631; color:white;" width="60%" align="center" >
+		<tr><td>
+Your Weight(kg): <input type="text" name="weight" size="10"></td>
+<td rowspan="5"><img src="bmi.jpg" width="60%" height="450" align="right" ></td></tr>
+<tr><td>
+Your Height(cm): <input type="text" name="height" size="10"></td></tr>
+<tr><td>
+<input type="button" value="Calculate BMI" onClick="calculateBmi()"style="background-color:#F1C40F;" style="color:white;" align="center">
+</td></tr>
+<tr><td>
+Your BMI: <input type="text" name="bmi" size="10">
+</td></tr>
+<tr><td>
+This Means: <input type="text" name="meaning" size="25"></td></tr>
+<tr><td>
+<input type="reset" value="Reset" / style="background-color:#F1C40F;" style="color:white;" align="center">
+</td></tr>
+</table>
+</form>
+    </body>
+</html>

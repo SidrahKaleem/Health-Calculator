@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title> Health & Fitness Calculators </title>
+<script> 
+
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle(3000);
+  });
+});
+</script>
+<style>
+h1 {
+  height: 20px;
+  width: 92%;
+    font-size: 30pt; 
+ padding: 10px 50px 40px 50px;
+}
+.button {
+  border-color: white;
+  color: black;
+  text-decoration:bold;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+</style>
+</head>
+<body background="bg.jpg">
+<h1 align="center" style="background-color:#F1C40F; color:white" >Health & Fitness Calculators</h1>
+
+<img src="health.png" width="100%" height="80" align="center" >
+<button id="flip" style="background-color:#F1C40F ;" class="button">Discription</button>
+<p style="background-color:#E74C3C; color:white" id="panel" ><b>This section lists our health calculators.Each one has been chosen to assist with a specific problem, and to help you improve every aspect of your physical health.</b></p>
+<table style="background-color:#1B2631;" width="50%" height="200" align="center">
+<tr><td align="center">
+<p style="color:white;">
+Calculate Your Body Fat Index</p>
+	<a href="project1.html">
+	<button  style="background-color:#F1C40F;" style="color:white;"> Body fat Calculator </button>
+	</a>
+	</td>
+	<td rowspan="5"><img src="doctor.jpg">
+	</tr>
+<tr><td align="center">
+<p style="color:white;">Heart Rate Calculator</p>
+	<a href="heartRate.html">
+	<button style="background-color:#F1C40F;" style="color:white;"> heart rate Calculator </button>
+	</a>
+</td></tr>
+<tr><td align="center">
+<p style="color:white;">Running Pace Calculator </p>
+	<a href="lastTry.html">
+	<button style="background-color:#F1C40F;" style="color:white;">running pace Calculator </button>
+	</a>
+</td></tr>
+<tr><td align="center">
+<p style="color:white;">Calculate Your Calories Burned Running </p>
+	<a href="cb.html">
+	<button style="background-color:#F1C40F;" style="color:white;"> Calories Burn Calculator </button>
+	</a>
+</td></tr>
+<tr><td align="center">
+<p style="color:white;">Body Mass Index (BMI) Calculator </p>
+	<a href="and.html">
+	<button style="background-color:#F1C40F;" style="color:white;"> BMI Calculator </button>
+	</a>
+</td></tr>
+</table>
+</body>
+</html>
